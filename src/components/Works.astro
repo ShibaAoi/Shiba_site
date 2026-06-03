@@ -1,0 +1,71 @@
+---
+import works from "../data/works.json";
+---
+
+<section id="works">
+  <h2>Works</h2>
+
+  <div class="works-grid">
+    {
+      works.map((work) => (
+        <article class="card reveal">
+          <img src={work.image} alt={work.title} />
+
+          <h3>{work.title}</h3>
+
+          <p>{work.description}</p>
+
+          <p>{work.tech}</p>
+
+          <a href={work.github}>
+            GitHubを見る
+          </a>
+        </article>
+      ))
+    }
+  </div>
+</section>
+
+<style>
+.works-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.card {
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 24px;
+  transition: 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease;
+}
+
+.reveal.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .works-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>

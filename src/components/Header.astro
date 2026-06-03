@@ -1,0 +1,44 @@
+<header class="header">
+  <div class="logo">SHIBA</div>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#works">Works</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<style>
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 16px 32px;
+  background: white;
+  border-bottom: 1px solid #eee;
+
+  z-index: 1000;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+nav a {
+  margin-left: 16px;
+  text-decoration: none;
+  color: black;
+}
+
+nav a:hover {
+  opacity: 0.6;
+}
+</style>

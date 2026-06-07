@@ -34,11 +34,42 @@
 
 nav a {
   margin-left: 16px;
+  padding: 6px 0;
   text-decoration: none;
   color: black;
+  font-size: 15px;
 }
 
 nav a:hover {
   opacity: 0.6;
+}
+
+@media (max-width: 900px) {
+  .header {
+    gap: 8px;
+    padding: 12px 12px;
+  }
+
+  .logo {
+    flex-shrink: 0;
+    font-size: 16px;
+    line-height: 1;
+  }
+
+  nav {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    min-width: 0;
+  }
+
+  nav a {
+    margin-left: 0;
+    padding: 6px 0;
+    color: #111;
+    font-size: 12px;
+    line-height: 1.2;
+    white-space: nowrap;
+  }
 }
 </style>

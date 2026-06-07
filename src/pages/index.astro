@@ -12,7 +12,8 @@ import Contact from "../components/Contact.astro";
 <html lang="ja">
 <head>
   <meta charset="utf-8" />
-  <title>しば Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SHIBA Portfolio</title>
 </head>
 
 <body>
@@ -27,7 +28,7 @@ import Contact from "../components/Contact.astro";
 <script is:inline>
   window.addEventListener("DOMContentLoaded", () => {
 
-    // ① セクション用
+    // セクション用
     const sections = document.querySelectorAll("section:not(.hero)");
 
     const sectionObserver = new IntersectionObserver((entries) => {
@@ -46,7 +47,7 @@ import Contact from "../components/Contact.astro";
     });
 
 
-    // ② Worksカード用
+    // Worksカード用
     const cards = document.querySelectorAll(".reveal");
 
     const cardObserver = new IntersectionObserver((entries) => {

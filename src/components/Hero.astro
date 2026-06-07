@@ -1,75 +1,68 @@
-<section class="hero hero-animate" id="hero">
-  <p class="subtitle">Web Developer</p>
+<header class="header">
+  <div class="logo">SHIBA</div>
 
-  <h1>SHIBA</h1>
-
-  <p class="description">
-    フロントエンドを中心に学習中の学生です。<br />
-    Astro / HTML / CSS / JavaScript を使って制作しています。
-  </p>
-
-  <div class="buttons">
-    <a href="#works">Worksを見る</a>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#works">Works</a>
+    <a href="#skills">Skills</a>
     <a href="#contact">Contact</a>
-  </div>
-</section>
+  </nav>
+</header>
+
 <style>
-.hero {
-  min-height: 80vh;
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 12px;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 16px 32px;
+  background: white;
+  border-bottom: 1px solid #eee;
+
+  z-index: 1000;
 }
 
-.subtitle {
-  font-size: 16px;
-  color: #666;
-  letter-spacing: 1px;
+.logo {
+  font-weight: bold;
+  font-size: 18px;
 }
 
-.hero h1 {
-  font-size: 5rem;
-  font-weight: 700;
-  margin: 0;
-}
-
-.description {
-  font-size: 16px;
-  color: #444;
-  max-width: 600px;
-}
-
-.buttons {
-  margin-top: 20px;
-  display: flex;
-  gap: 12px;
-}
-
-.buttons a {
-  display: inline-block;
-  padding: 10px 16px;
-  border-radius: 8px;
+nav a {
+  margin-left: 16px;
+  padding: 6px 0;
   text-decoration: none;
-
-  font-size: 14px;
-  transition: 0.2s;
+  color: black;
+  font-size: 15px;
 }
 
-/* メインボタン */
-.buttons a:first-child {
-  background: #111;
-  color: #fff;
+nav a:hover {
+  opacity: 0.6;
 }
 
-/* サブボタン */
-.buttons a:last-child {
-  border: 1px solid #ddd;
-  color: #111;
-}
+@media (max-width: 900px) {
+  .hero {
+    min-height: auto;
+    padding-top: 16px;
+    padding-bottom: 24px;
+    gap: 10px;
+  }
 
-.buttons a:hover {
-  transform: translateY(-2px);
-  opacity: 0.85;
+  .hero h1 {
+    font-size: 2.6rem;
+  }
+
+  .description {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .buttons {
+    margin-top: 12px;
+  }
 }
 </style>

@@ -1,9 +1,9 @@
 [
   {
     "title": "SNSコメント音ゲー",
-    "description": "不適切コメントを処理する音ゲー",
+    "description": "SNS上のコメントをテーマにしたリズムゲームです。不適切なコメントへの対応をゲーム体験として表現しています。",
     "tech": "Unity, Arduino",
     "image": "/images/sample_image.png",
-    "github": "https://github.com/..."
+    "github": "https://github.com/your-username/project-name"
   }
 ]

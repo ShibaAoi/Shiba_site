@@ -8,7 +8,12 @@ body {
   font-family: sans-serif;
   line-height: 1.8;
   color: #222;
-  background: #fff;
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.84)),
+    linear-gradient(120deg, #f7c7d9, #b8d7ff, #d6f2d8, #fff1b8, #f7c7d9);
+  background-attachment: fixed;
+  background-size: auto, 400% 400%;
+  animation: emotionalGradient 18s ease infinite;
   padding-top: 70px;
 }
 
@@ -154,10 +159,17 @@ html {
   animation-delay: 0.3s;
 }
 
-@keyframes fadeUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
+@keyframes emotionalGradient {
+  0% {
+    background-position: center, 0% 50%;
+  }
+
+  50% {
+    background-position: center, 100% 50%;
+  }
+
+  100% {
+    background-position: center, 0% 50%;
   }
 }
 

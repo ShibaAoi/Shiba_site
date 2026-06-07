@@ -5,5 +5,19 @@
     "tech": "Unity, Arduino",
     "image": "/images/sample_image.png",
     "github": "https://github.com/your-username/project-name"
+  },
+  {
+    "title": "ポートフォリオサイト",
+    "description": "Astroを使って制作したポートフォリオサイトです。作品やスキル、連絡先を見やすくまとめています。",
+    "tech": "Astro, HTML, CSS, JavaScript",
+    "image": "/images/sample_image.png",
+    "github": "https://github.com/your-username/portfolio-site"
+  },
+  {
+    "title": "3D制作サンプル",
+    "description": "Blenderを使った3D表現の制作サンプルです。形状、質感、見せ方を意識して制作しています。",
+    "tech": "Blender",
+    "image": "/images/sample_image.png",
+    "github": "https://github.com/your-username/3d-sample"
   }
 ]

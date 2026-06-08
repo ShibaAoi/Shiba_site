@@ -1,47 +1,56 @@
-<header class="header">
-  <div class="logo">SHIBA</div>
+<section class="hero hero-animate">
+  <p class="subtitle">Portfolio</p>
+  <h1>SHIBA</h1>
+  <p class="description">
+    BlenderやUnityを使いながら、3D表現とインタラクティブな作品を作っています。
+  </p>
 
-  <nav>
-    <a href="#about">About</a>
-    <a href="#works">Works</a>
-    <a href="#skills">Skills</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
+  <div class="buttons">
+    <a href="/works/">Works</a>
+    <a href="/contact/">Contact</a>
+  </div>
+</section>
 
 <style>
-.header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-
+.hero {
+  min-height: calc(100vh - 70px);
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  padding: 16px 32px;
-  background: white;
-  border-bottom: 1px solid #eee;
-
-  z-index: 1000;
+  flex-direction: column;
+  justify-content: center;
+  gap: 14px;
 }
 
-.logo {
-  font-weight: bold;
+.subtitle {
+  color: #555;
+  font-size: 15px;
+  letter-spacing: 0;
+}
+
+.description {
+  max-width: 620px;
   font-size: 18px;
 }
 
-nav a {
-  margin-left: 16px;
-  padding: 6px 0;
-  text-decoration: none;
-  color: black;
-  font-size: 15px;
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 12px;
 }
 
-nav a:hover {
-  opacity: 0.6;
+.buttons a {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 8px;
+  background: #111;
+  color: white;
+  text-decoration: none;
+}
+
+.buttons a + a {
+  background: rgba(255, 255, 255, 0.8);
+  color: #111;
+  border: 1px solid rgba(0, 0, 0, 0.12);
 }
 
 @media (max-width: 900px) {

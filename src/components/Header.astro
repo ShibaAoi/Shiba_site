@@ -41,11 +41,12 @@
   left: 0;
   width: 100%;
 
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 80px 1fr;
   align-items: center;
+  gap: 6px;
 
-  padding: 16px 32px;
+  padding: 10px 12px;
   background: rgba(255, 255, 255, 0.78);
   border-bottom: 1px solid rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(14px);
@@ -55,21 +56,29 @@
 
 .logo {
   font-weight: bold;
-  font-size: 18px;
+  font-size: 17px;
+  line-height: 1.2;
 }
 
 nav {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-  gap: 16px;
+  flex-wrap: nowrap;
+  justify-content: center;
+  justify-self: end;
+  gap: 4px;
+  width: 100%;
 }
 
 nav a {
-  padding: 6px 0;
+  width: 58px;
+  padding: 4px 0;
   text-decoration: none;
+  text-align: center;
   color: black;
-  font-size: 15px;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.35;
+  white-space: nowrap;
 }
 
 nav a:hover {
@@ -77,11 +86,10 @@ nav a:hover {
 }
 
 nav a[aria-current="page"] {
-  font-weight: 700;
   pointer-events: auto;
 }
 
-@media (max-width: 900px) {
+@media (min-width: 421px) {
   .header {
     align-items: flex-start;
     gap: 10px;
@@ -96,37 +104,43 @@ nav a[aria-current="page"] {
   }
 
   nav {
-    gap: 6px 12px;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 6px;
     min-width: 0;
+    width: 460px;
   }
 
   nav a {
+    width: 58px;
     padding: 5px 0;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 1.35;
-    white-space: nowrap;
   }
 }
 
-@media (max-width: 420px) {
+@media (min-width: 901px) {
   .header {
-    flex-direction: column;
     align-items: center;
-    gap: 6px;
-    padding: 10px 12px;
+    gap: 0;
+    padding: 16px 32px;
   }
 
   .logo {
+    font-size: 16px;
     padding-top: 0;
   }
 
   nav {
-    justify-content: center;
+    gap: 10px;
+    width: 410px;
   }
 
   nav a {
-    padding: 4px 2px;
+    width: 74px;
+    padding: 6px 0;
     font-size: 16px;
+    line-height: 1.4;
   }
 }
 </style>

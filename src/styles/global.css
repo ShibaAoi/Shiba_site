@@ -83,6 +83,8 @@ a:hover {
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 80px;
+  overflow-y: scroll;
+  scrollbar-gutter: stable;
 }
 
 .card h3 {

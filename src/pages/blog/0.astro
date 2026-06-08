@@ -1,0 +1,55 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { blogPosts } from "../../data/blogPosts";
+
+const post = blogPosts[0];
+---
+
+<BaseLayout title={`${post.articleTitle} | SHIBA Portfolio`}>
+  <article class="blog-entry page-animate">
+    <p class="blog-date">{post.date}</p>
+    <h2>{post.articleTitle}</h2>
+
+    <p>
+      {post.body}
+    </p>
+
+    <a class="back-link" href="/">Homeへ戻る</a>
+  </article>
+</BaseLayout>
+
+<style>
+.blog-entry {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 80px 20px;
+}
+
+.blog-date {
+  margin-bottom: 6px;
+  color: #666;
+  font-size: 13px;
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: 24px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  background: #111;
+  color: white;
+  text-decoration: none;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.back-link:hover {
+  opacity: 0.8;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .blog-entry {
+    padding: 60px 20px;
+  }
+}
+</style>

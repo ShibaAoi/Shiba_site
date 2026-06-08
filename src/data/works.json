@@ -1,14 +1,14 @@
 [
   {
-    "title": "SNSコメント音ゲー",
-    "description": "SNS上のコメントをテーマにしたリズムゲームです。不適切なコメントへの対応をゲーム体験として表現しています。",
+    "title": "SNSコメント避けゲーム",
+    "description": "SNS上のコメントをテーマにしたリズムゲームです。不意に流れてくるコメントへの反応をゲーム体験として表現しています。",
     "tech": "Unity, Arduino",
     "image": "/images/sample_image.png",
     "github": "https://github.com/your-username/project-name"
   },
   {
     "title": "ポートフォリオサイト",
-    "description": "Astroを使って制作したポートフォリオサイトです。作品やスキル、連絡先を見やすくまとめています。",
+    "description": "Astroを使って制作したポートフォリオサイトです。作品、スキル、連絡先を見やすくまとめています。",
     "tech": "Astro, HTML, CSS, JavaScript",
     "image": "/images/sample_image.png",
     "github": "https://github.com/your-username/portfolio-site"

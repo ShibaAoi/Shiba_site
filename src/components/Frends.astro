@@ -1,0 +1,99 @@
+---
+const frends = [
+  {
+    name: "Aoi",
+    role: "3D Artist",
+    url: "https://example.com/aoi",
+    icon: "/images/sample_image.png"
+  },
+  {
+    name: "Ren",
+    role: "Game Developer",
+    url: "https://example.com/ren",
+    icon: "/images/sample_image.png"
+  },
+  {
+    name: "Mika",
+    role: "Designer",
+    url: "https://example.com/mika",
+    icon: "/images/sample_image.png"
+  }
+];
+---
+
+<section id="frends" class="page-animate">
+  <h2>Frends</h2>
+
+  <div class="frends-grid">
+    {
+      frends.map((frend) => (
+        <a class="frend-card" href={frend.url}>
+          <img src={frend.icon} alt={`${frend.name} icon`} />
+
+          <div>
+            <h3>{frend.name}</h3>
+            <p>{frend.role}</p>
+          </div>
+        </a>
+      ))
+    }
+  </div>
+</section>
+
+<style>
+.frends-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  max-width: 780px;
+}
+
+.frend-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-height: 96px;
+  padding: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.78);
+  color: #222;
+  text-decoration: none;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 7px 16px rgba(0, 0, 0, 0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.2s ease;
+}
+
+.frend-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.14);
+  opacity: 0.92;
+}
+
+.frend-card img {
+  width: 56px;
+  height: 56px;
+  flex: 0 0 auto;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.frend-card h3 {
+  margin: 0 0 4px;
+  font-size: 16px;
+  line-height: 1.3;
+}
+
+.frend-card p {
+  margin: 0;
+  color: #555;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+  .frends-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>

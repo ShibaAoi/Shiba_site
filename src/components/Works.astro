@@ -2,24 +2,28 @@
 import works from "../data/works.json";
 ---
 
-<section id="works">
+<section id="works" class="page-animate">
   <h2>Works</h2>
 
   <div class="works-grid">
     {
       works.map((work) => (
-        <article class="card reveal">
+        <article class="card">
           <img src={work.image} alt={work.title} />
 
-          <h3>{work.title}</h3>
+          <div class="card-body">
+            <h3>{work.title}</h3>
 
-          <p>{work.description}</p>
+            <div class="card-details">
+              <p>{work.description}</p>
 
-          <p>{work.tech}</p>
+              <p class="tech">{work.tech}</p>
+            </div>
 
-          <a href={work.github}>
-            GitHubを見る
-          </a>
+            <a href={work.github}>
+              GitHubを見る
+            </a>
+          </div>
         </article>
       ))
     }
@@ -29,43 +33,81 @@ import works from "../data/works.json";
 <style>
 .works-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
+  grid-template-columns: 1fr;
+  gap: 15px;
+  max-width: 780px;
 }
 
 .card {
-  border: 1px solid #ddd;
-  border-radius: 12px;
-  padding: 24px;
+  display: grid;
+  grid-template-columns: 126px 1fr;
+  gap: 18px;
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 8px;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(10px);
   transition: 0.25s ease;
 }
 
 .card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+  transform: translateY(-3px);
+  box-shadow: 0 7px 16px rgba(0, 0, 0, 0.1);
 }
 
 .card img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  margin-bottom: 16px;
+  width: 126px;
+  height: 96px;
+  object-fit: contain;
+  border-radius: 6px;
 }
 
-.reveal {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.6s ease;
+.card h3 {
+  font-size: 19px;
+  line-height: 1.25;
+  margin: 0 0 5px;
 }
 
-.reveal.show {
-  opacity: 1;
-  transform: translateY(0);
+.card p {
+  font-size: 15px;
+  line-height: 1.35;
+  margin: 3px 0;
 }
 
-@media (max-width: 768px) {
+.card .tech {
+  color: #666;
+}
+
+.card-details {
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.card-details:hover {
+  transform: translateY(-2px);
+  opacity: 0.82;
+}
+
+.card a {
+  margin-top: 8px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 15px;
+}
+
+@media (max-width: 480px) {
   .works-grid {
-    grid-template-columns: 1fr;
+    max-width: none;
+  }
+
+  .card {
+    grid-template-columns: 108px 1fr;
+    gap: 15px;
+  }
+
+  .card img {
+    width: 108px;
+    height: 84px;
   }
 }
 </style>

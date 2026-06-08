@@ -2,12 +2,37 @@
   <div class="logo">SHIBA</div>
 
   <nav>
-    <a href="#about">About</a>
-    <a href="#works">Works</a>
-    <a href="#skills">Skills</a>
-    <a href="#contact">Contact</a>
+    <a href="/">Home</a>
+    <a href="/about/">About</a>
+    <a href="/works/">Works</a>
+    <a href="/skills/">Skills</a>
+    <a href="/contact/">Contact</a>
   </nav>
 </header>
+
+<script is:inline>
+  const normalizePath = (path) => {
+    if (path === "/") {
+      return "/";
+    }
+
+    return path.endsWith("/") ? path : `${path}/`;
+  };
+
+  const currentPath = normalizePath(window.location.pathname);
+
+  document.querySelectorAll(".header nav a").forEach((link) => {
+    const linkPath = normalizePath(new URL(link.href).pathname);
+
+    if (linkPath === currentPath) {
+      link.setAttribute("aria-current", "page");
+
+      link.addEventListener("click", (event) => {
+        event.preventDefault();
+      });
+    }
+  });
+</script>
 
 <style>
 .header {
@@ -21,8 +46,9 @@
   align-items: center;
 
   padding: 16px 32px;
-  background: white;
-  border-bottom: 1px solid #eee;
+  background: rgba(255, 255, 255, 0.78);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(14px);
 
   z-index: 1000;
 }
@@ -32,8 +58,14 @@
   font-size: 18px;
 }
 
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 16px;
+}
+
 nav a {
-  margin-left: 16px;
   padding: 6px 0;
   text-decoration: none;
   color: black;
@@ -44,32 +76,57 @@ nav a:hover {
   opacity: 0.6;
 }
 
+nav a[aria-current="page"] {
+  font-weight: 700;
+  pointer-events: auto;
+}
+
 @media (max-width: 900px) {
   .header {
-    gap: 8px;
-    padding: 12px 12px;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 12px 14px;
   }
 
   .logo {
     flex-shrink: 0;
-    font-size: 16px;
-    line-height: 1;
+    padding-top: 5px;
+    font-size: 17px;
+    line-height: 1.2;
   }
 
   nav {
-    display: flex;
-    justify-content: flex-end;
-    gap: 8px;
+    gap: 6px 12px;
     min-width: 0;
   }
 
   nav a {
-    margin-left: 0;
-    padding: 6px 0;
-    color: #111;
-    font-size: 12px;
-    line-height: 1.2;
+    padding: 5px 0;
+    font-size: 16px;
+    line-height: 1.35;
     white-space: nowrap;
+  }
+}
+
+@media (max-width: 420px) {
+  .header {
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 12px;
+  }
+
+  .logo {
+    padding-top: 0;
+  }
+
+  nav {
+    justify-content: center;
+  }
+
+  nav a {
+    padding: 4px 2px;
+    font-size: 16px;
   }
 }
 </style>

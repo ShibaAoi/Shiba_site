@@ -159,6 +159,56 @@ html {
   animation-delay: 0.3s;
 }
 
+.page-animate h2,
+.page-animate p,
+.page-animate .works-grid,
+.page-animate .skills,
+.page-animate ul {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.8s ease forwards;
+}
+
+.page-animate p {
+  animation-delay: 0.1s;
+}
+
+.page-animate .works-grid,
+.page-animate .skills,
+.page-animate ul {
+  animation-delay: 0.2s;
+}
+
+.page-animate .card,
+.page-animate .skill,
+.page-animate li {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.8s ease forwards;
+}
+
+.page-animate .card:nth-child(1),
+.page-animate .skill:nth-child(1),
+.page-animate li:nth-child(1) {
+  animation-delay: 0.25s;
+}
+
+.page-animate .card:nth-child(2),
+.page-animate .skill:nth-child(2),
+.page-animate li:nth-child(2) {
+  animation-delay: 0.32s;
+}
+
+.page-animate .card:nth-child(3),
+.page-animate .skill:nth-child(3),
+.page-animate li:nth-child(3) {
+  animation-delay: 0.39s;
+}
+
+.page-animate .skill:nth-child(n + 4) {
+  animation-delay: 0.46s;
+}
+
 @keyframes emotionalGradient {
   0% {
     background-position: center, 0% 50%;
@@ -173,7 +223,18 @@ html {
   }
 }
 
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @media (max-width: 768px) {
+  body {
+    padding-top: 92px;
+  }
+
   h1 {
     font-size: 3rem;
   }
@@ -184,5 +245,11 @@ html {
 
   section {
     padding: 60px 20px;
+  }
+}
+
+@media (max-width: 420px) {
+  body {
+    padding-top: 118px;
   }
 }

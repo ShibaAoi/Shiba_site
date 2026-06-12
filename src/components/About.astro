@@ -1,7 +1,156 @@
-<section id="about" class="page-animate">
-  <h2>About</h2>
+<section id="about" class="about-page page-animate">
+  <div class="about-hero">
+    <div class="profile-mark" aria-hidden="true">
+      <img src="/images/site_icon.jpg" alt="" />
+    </div>
 
-  <p>
-    Blenderをいじり始めました。まだ何も知りません。
-  </p>
+    <div class="about-intro">
+      <h2>Shiba Aoi</h2>
+      <p class="lead">
+        Blenderをちょっとずつ勉強中
+      </p>
+    </div>
+  </div>
+
+  <div class="about-grid">
+    <article class="about-panel">
+      <h3>Profile</h3>
+      <p>
+        しば。何も持たずに長野県からやってきました。<br>
+        普段はSNS(twitter,discord)に常駐しています。<br>
+        神奈川工科大学情報学部情報メディア学科2年<br>
+        コーヒーとゲームが好き。
+      </p>
+    </article>
+
+    <article class="about-panel">
+      <h3>Interest</h3>
+      <ul>
+        <li>Blenderでの3Dモデリング</li>
+        <li>Unityを使ったインタラクション制作</li>
+        <li>Webサイトのデザインと実装</li>
+      </ul>
+    </article>
+
+    <article class="about-panel wide">
+      <h3>Style</h3>
+      <p>
+        すーぱー飽き性なので進めては他のことをやりを繰り返して遊んでいます。
+      </p>
+    </article>
+  </div>
 </section>
+
+<style>
+.about-page {
+  max-width: 960px;
+}
+
+.about-hero {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 34px;
+  align-items: center;
+  margin-bottom: 28px;
+  padding: 26px;
+  border: 1px solid rgba(255, 255, 255, 0.78);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow: 0 14px 34px rgba(50, 64, 90, 0.1);
+  backdrop-filter: blur(12px);
+}
+
+.profile-mark {
+  width: 180px;
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(235, 244, 255, 0.88));
+  overflow: hidden;
+}
+
+.profile-mark img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-intro h2 {
+  margin: 0 0 14px;
+  font-size: 38px;
+  line-height: 1.2;
+}
+
+.lead {
+  max-width: 640px;
+  margin: 0;
+  color: #344050;
+  font-size: 17px;
+  line-height: 1.9;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.about-panel {
+  min-height: 190px;
+  padding: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: 0 10px 24px rgba(50, 64, 90, 0.08);
+  backdrop-filter: blur(10px);
+}
+
+.about-panel.wide {
+  grid-column: 1 / -1;
+  min-height: auto;
+}
+
+.about-panel h3 {
+  margin: 0 0 12px;
+  color: #1f2a36;
+  font-size: 19px;
+}
+
+.about-panel p {
+  margin: 0;
+  color: #3d4856;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.about-panel ul {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding-left: 18px;
+  color: #3d4856;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+@media (max-width: 720px) {
+  .about-hero {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .profile-mark {
+    width: min(180px, 100%);
+  }
+
+  .about-intro h2 {
+    font-size: 32px;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>

@@ -1,18 +1,19 @@
 ---
-import BaseLayout from "../../layouts/BaseLayout.astro";
-import { blogPosts } from "../../data/blogPosts";
+import BaseLayout from "./BaseLayout.astro";
 
-const post = blogPosts[0];
+const { frontmatter } = Astro.props;
+const title = frontmatter.articleTitle ?? frontmatter.title;
+const date = frontmatter.date;
 ---
 
-<BaseLayout title={`${post.articleTitle} | SHIBA Portfolio`}>
+<BaseLayout title={`${title} | SHIBA Portfolio`}>
   <article class="blog-entry page-animate">
-    <p class="blog-date">{post.date}</p>
-    <h2>{post.articleTitle}</h2>
+    {date && <p class="blog-date">{date}</p>}
+    <h2>{title}</h2>
 
-    <p>
-      {post.body}
-    </p>
+    <div class="blog-body">
+      <slot />
+    </div>
 
     <a class="back-link" href="/">Homeへ戻る</a>
   </article>
@@ -29,6 +30,28 @@ const post = blogPosts[0];
   margin-bottom: 6px;
   color: #666;
   font-size: 13px;
+}
+
+.blog-body {
+  color: #333;
+}
+
+.blog-body :global(p) {
+  margin-bottom: 16px;
+}
+
+.blog-body :global(h2),
+.blog-body :global(h3) {
+  margin-top: 28px;
+}
+
+.blog-body :global(ul),
+.blog-body :global(ol) {
+  margin: 0 0 16px 22px;
+}
+
+.blog-body :global(strong) {
+  color: #111;
 }
 
 .back-link {

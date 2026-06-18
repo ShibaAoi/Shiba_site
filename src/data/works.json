@@ -5,5 +5,14 @@
     "tech": "Astro,HTML/CSS,js",
     "image": "/images/site_icon.jpg",
     "github": "https://github.com/ShibaAoi/Shiba_site"
+  },
+
+  {
+    "title": "kamome_bot",
+    "description": "K3号館2階 フードコートかもめのメニューを表示するbotです。テスト不足なため被験者募集中",
+    "tech": "JavaScript",
+    "image": "/images/kamome_icon.png",
+    "github": "https://github.com/ShibaAoi/kamome_bot"
   }
 ]
+
